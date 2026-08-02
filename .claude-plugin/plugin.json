@@ -1,0 +1,14 @@
+{
+  "name": "llm-wiki-g2",
+  "version": "0.1.0",
+  "description": "Upgrade any LLM Wiki into a derived knowledge graph. Edges are declared at write time, not extracted at read time. Adds L0/L1/L2 retrieval, provenance anchoring, and git-backed evaluation — without touching a single line of your existing prose.",
+  "author": {
+    "name": "Karelman"
+  },
+  "homepage": "https://github.com/karelman/llm-wiki-g2",
+  "license": "MIT",
+  "keywords": [
+    "obsidian", "llm-wiki", "knowledge-graph", "second-brain",
+    "pkm", "graph-engineering", "claude-code", "cowork"
+  ]
+}

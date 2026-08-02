@@ -1,0 +1,66 @@
+/* ============================================================
+   vault-colors.css — LLM Wiki G²
+   Colours the file explorer by node type.
+   Same palette as the graph view colour groups.
+   ============================================================ */
+
+.theme-light, .theme-dark {
+  --vc-source:   #43A047;  /* sources    */
+  --vc-concept:  #3B82F6;  /* concepts   */
+  --vc-entity:   #A855F7;  /* entities   */
+  --vc-question: #F59E0B;  /* synthesis  */
+  --vc-gap:      #EF4444;  /* gaps       */
+  --vc-meta:     #64748B;  /* meta       */
+}
+
+/* ---------- folders: coloured title + left rule ---------- */
+.nav-folder-title[data-path="wiki/sources"]   { color: var(--vc-source);   border-left: 3px solid var(--vc-source);   }
+.nav-folder-title[data-path="wiki/concepts"]  { color: var(--vc-concept);  border-left: 3px solid var(--vc-concept);  }
+.nav-folder-title[data-path="wiki/entities"]  { color: var(--vc-entity);   border-left: 3px solid var(--vc-entity);   }
+.nav-folder-title[data-path="wiki/questions"] { color: var(--vc-question); border-left: 3px solid var(--vc-question); }
+.nav-folder-title[data-path="wiki/gaps"]      { color: var(--vc-gap);      border-left: 3px solid var(--vc-gap);      }
+.nav-folder-title[data-path="wiki/meta"]      { color: var(--vc-meta);     border-left: 3px solid var(--vc-meta);     }
+
+.nav-folder-title[data-path^="wiki/"] { font-weight: 600; }
+
+/* ---------- files: a coloured dot ---------- */
+.nav-file-title[data-path^="wiki/sources/"]::before,
+.nav-file-title[data-path^="wiki/concepts/"]::before,
+.nav-file-title[data-path^="wiki/entities/"]::before,
+.nav-file-title[data-path^="wiki/questions/"]::before,
+.nav-file-title[data-path^="wiki/gaps/"]::before,
+.nav-file-title[data-path^="wiki/meta/"]::before {
+  content: "";
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+.nav-file-title[data-path^="wiki/sources/"]::before   { background: var(--vc-source);   }
+.nav-file-title[data-path^="wiki/concepts/"]::before  { background: var(--vc-concept);  }
+.nav-file-title[data-path^="wiki/entities/"]::before  { background: var(--vc-entity);   }
+.nav-file-title[data-path^="wiki/questions/"]::before { background: var(--vc-question); }
+.nav-file-title[data-path^="wiki/gaps/"]::before      { background: var(--vc-gap);      }
+.nav-file-title[data-path^="wiki/meta/"]::before      { background: var(--vc-meta);     }
+
+/* gaps in italics: they are open debt and should nag a little */
+.nav-file-title[data-path^="wiki/gaps/"] { font-style: italic; }
+
+/* ---------- navigation files ---------- */
+.nav-file-title[data-path="wiki/index.md"],
+.nav-file-title[data-path="wiki/hot.md"],
+.nav-file-title[data-path="wiki/overview.md"],
+.nav-file-title[data-path="wiki/log.md"] {
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* ---------- bin/ and .raw/: infrastructure, dimmed ---------- */
+.nav-folder-title[data-path="bin"],
+.nav-folder-title[data-path=".raw"] { opacity: 0.55; font-style: italic; }
+
+/* ---------- callouts ---------- */
+.callout[data-callout="danger"]  { --callout-color: 239, 68, 68;  }
+.callout[data-callout="warning"] { --callout-color: 245, 158, 11; }
+.callout[data-callout="success"] { --callout-color: 67, 160, 71;  }

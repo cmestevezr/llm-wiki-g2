@@ -1,0 +1,15 @@
+# derived — regenerate with bin/build-edges.py
+edges.json
+
+# Obsidian UI state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# migration artefacts (reports, backups)
+.g2/
+
+# system
+.DS_Store
+__pycache__/
+*.pyc
+tests/fixtures/*/

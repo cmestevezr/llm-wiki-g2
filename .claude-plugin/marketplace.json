@@ -1,0 +1,13 @@
+{
+  "name": "llm-wiki-g2-marketplace",
+  "owner": {
+    "name": "Karelman"
+  },
+  "plugins": [
+    {
+      "name": "llm-wiki-g2",
+      "source": "./",
+      "description": "Upgrade any LLM Wiki into a derived knowledge graph — safely, additively, reversibly."
+    }
+  ]
+}
