@@ -27,14 +27,22 @@ git remote add origin git@github.com:cmestevezr/llm-wiki-g2.git
 ## 3. Sanity check before announcing
 
 ```bash
-bash tests/test-migration.sh          # should print 8 passed, 0 failed
-grep -rn 'llm-wiki-g2' README.md docs/ .claude-plugin/ templates/ | grep -v cmestevezr
+pip3 install pyyaml                   # the only dependency
+bash tests/test-migration.sh          # should print 12 passed, 0 failed
+
+grep -rnE '(github\.com/|marketplace add )[A-Za-z0-9_-]+/llm-wiki-g2' \
+     README.md docs/ .claude-plugin/ templates/ | grep -v cmestevezr
 ```
 
-The second command should return nothing. If it prints a line, a URL was missed.
+The grep should return nothing. It matches only *owner*/llm-wiki-g2 references, so the
+plugin and marketplace names — which legitimately contain `llm-wiki-g2` with no owner —
+do not trip it.
 
 The tests matter more than usual here: the five migration guarantees *are* the pitch.
 If someone's first experience is losing a note, no README saves it.
+
+If the tests exit with code 2 and a message about PyYAML, install it and re-run. They
+refuse to run without it rather than reporting vacuous passes.
 
 ## 4. Repo settings worth doing
 

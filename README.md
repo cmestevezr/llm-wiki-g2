@@ -157,8 +157,19 @@ design assumes.
 
 ## Requirements
 
-Python 3.8+, PyYAML, git. Obsidian optional but assumed. Model-agnostic — nothing here
-depends on a particular provider.
+```bash
+pip3 install pyyaml
+```
+
+Python 3.8+, PyYAML, git. On macOS, if pip refuses with
+`externally-managed-environment`, use `pip3 install --user pyyaml` or a venv.
+
+Obsidian is optional but assumed. Model-agnostic — nothing here depends on a particular
+provider.
+
+```bash
+bash tests/test-migration.sh    # 12 passed, 0 failed
+```
 
 ## Credit
 

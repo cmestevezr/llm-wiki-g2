@@ -31,7 +31,15 @@ import argparse, datetime, difflib, hashlib, json, os, re, shutil, subprocess, s
 try:
     import yaml
 except ImportError:
-    sys.exit("PyYAML is required.  pip install pyyaml  (add --break-system-packages if needed)")
+    sys.exit(
+        "PyYAML is required.\n\n"
+        "  pip3 install pyyaml\n\n"
+        "If that fails with 'externally-managed-environment' (common on macOS with\n"
+        "Homebrew or a system Python), pick one:\n\n"
+        "  pip3 install --user pyyaml\n"
+        "  pip3 install --break-system-packages pyyaml\n"
+        "  python3 -m venv .venv && . .venv/bin/activate && pip install pyyaml\n"
+    )
 
 # fields G² adds. Nothing else is ever touched.
 ADDED = ["valid_from", "superseded_by", "derivation_depth", "relations", "sources", "aliases"]
