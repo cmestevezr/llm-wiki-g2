@@ -38,8 +38,12 @@ If it is ambiguous — say, three stray notes — **ask the user** which they me
    `wiki/{sources,concepts,entities,questions,gaps,meta}` and `.raw/` and `bin/`.
 2. Copy `templates/vault-CLAUDE.md` to the vault root as `CLAUDE.md`.
 3. Copy `bin/build-edges.py`, `bin/wq.py`, `bin/snapshot.sh` into the vault's `bin/`.
-4. Copy `templates/obsidian/*` into `.obsidian/` — **merge, never overwrite**: if
-   `graph.json` already exists, add the `colorGroups` key and leave every other key alone.
+4. **Obsidian is optional — check before assuming it.** If `.obsidian/` exists, the user
+   already uses it: copy `templates/obsidian/*` in, **merging, never overwriting** — if
+   `graph.json` is already there, add the `colorGroups` key and leave every other key alone.
+   If `.obsidian/` does not exist, ask whether they want it; if they say no or don't know,
+   skip this step entirely and say so. Nothing else depends on it. Do not tell the user to
+   install Obsidian, and do not imply the vault needs it to work.
 5. Create `wiki/index.md`, `wiki/log.md`, `wiki/hot.md`, `wiki/overview.md` from
    `templates/wiki/`.
 6. `git init` and commit, unless the user declines.
@@ -47,6 +51,10 @@ If it is ambiguous — say, three stray notes — **ask the user** which they me
    `wiki/overview.md` and to tailor the folder set — a book-reading vault wants
    `wiki/characters/`, a research vault does not.
 8. Tell them the next step is to drop a source into `.raw/` and say "ingest it".
+
+> A vault is a folder of markdown. There is no format to create and no application to
+> install first. If the user arrives expecting to set up Obsidian beforehand, correct
+> that gently — it is the most common wrong assumption about this pattern.
 
 ## Step 3 — migrate (existing LLM Wiki)
 

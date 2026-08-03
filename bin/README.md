@@ -68,7 +68,7 @@ bash tests/run-all.sh
 ```
 
 `test-migration.sh` — the five guarantees, 12 checks.
-`test-queries.sh` — every `wq.py` command, 19 checks, asserting on output.
+`test-queries.sh` — every `wq.py` command, 21 checks, asserting on output.
 
 Both refuse to run without PyYAML rather than reporting vacuous passes.
 

@@ -137,7 +137,7 @@ def scan(vault):
     pages = []
     for dp, dirs, fns in os.walk(vault):
         dirs[:] = [d for d in dirs
-                   if d not in (".obsidian", ".git", ".trash", "node_modules", "bin", ".g2-backup")
+                   if d not in (".obsidian", ".git", ".trash", "node_modules", "bin")
                    and d != ".g2" and not d.startswith(".raw")]
         for fn in sorted(fns):
             if not fn.endswith(".md") or fn.lower() in SPECIAL:

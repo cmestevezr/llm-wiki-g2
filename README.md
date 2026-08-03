@@ -169,16 +169,23 @@ pip3 install pyyaml
 Python 3.8+, PyYAML, git. On macOS, if pip refuses with
 `externally-managed-environment`, use `pip3 install --user pyyaml` or a venv.
 
-Obsidian is optional but assumed. Model-agnostic — nothing here depends on a particular
-provider.
+**Obsidian is not required.** A vault is just a folder of markdown files — there is no
+special format to create. The scripts read markdown and YAML frontmatter and never touch
+`.obsidian/`. `mkdir my-wiki` is a complete setup.
+
+If you do use Obsidian, point it at the folder afterwards (*Open folder as vault*) and you
+get the graph view, backlinks and the colour scheme for free. You can decide that later, or
+never.
+
+Model-agnostic — nothing here depends on a particular provider.
 
 ```bash
-bash tests/run-all.sh           # 31 passed, 0 failed
+bash tests/run-all.sh           # 33 passed, 0 failed
 ```
 
 Tested against Python 3.9 and 3.11. Two suites: `test-migration.sh` covers the five
 guarantees, `test-queries.sh` covers every `wq.py` command with assertions on output
-rather than exit codes.
+rather than exit codes, and asserts the suite runs with no `.obsidian/` present.
 
 ## Credit
 

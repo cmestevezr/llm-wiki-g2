@@ -122,6 +122,14 @@ assert "stats counts epistemic edges"          "epistemic edges" "${W[@]}" stats
 assert "lint detects the planted orphan"       "Floating Idea"   "${W[@]}" lint
 assert "lint counts it"                        "Total defects: 1" "${W[@]}" lint
 
+echo "no Obsidian required"
+# The README promises a vault is just a folder of markdown. The fixture above never
+# creates .obsidian/, so every check so far already ran without it — assert it plainly
+# so the promise is guarded rather than incidental.
+[ ! -d "$V/.obsidian" ] && ok "the whole suite ran with no .obsidian directory" \
+  || no ".obsidian was created — the docs claim it is not needed"
+assert "queries work on a plain markdown folder" "nodes" "${W[@]}" stats
+
 echo "failure modes"
 OUT="$("${W[@]}" neighbors "Nonexistent Page" 2>&1)"
 printf '%s' "$OUT" | grep -q "Not found" && ok "unknown page fails clearly" \

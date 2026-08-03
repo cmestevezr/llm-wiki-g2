@@ -1,5 +1,26 @@
 # Starting from scratch
 
+## What you need first — probably less than you think
+
+**You do not need Obsidian, and you do not need to create a vault beforehand.**
+
+An "Obsidian vault" is not a format. It is a folder containing markdown files. Obsidian
+creates its `.obsidian/` config directory the first time you open the folder, and that
+directory is the only thing that makes it look special. Nothing in this project reads it.
+
+So the whole prerequisite is:
+
+```bash
+mkdir my-wiki && cd my-wiki
+```
+
+You need Python 3.8+, PyYAML and git. That is the list.
+
+Obsidian is a **viewer**, and a good one — graph view, backlinks, colour coding. Install it
+whenever you feel like seeing your vault instead of querying it, point it at the same folder
+with *Open folder as vault*, and enable the CSS snippet. Or don't. The scripts and the
+retrieval protocol behave identically either way.
+
 ## Install
 
 ```bash
@@ -12,7 +33,7 @@ vault by hand. Nothing here needs the plugin system to work.
 
 ## Scaffold
 
-Open Claude in an empty folder and type `/g2`. You get:
+Open Claude in that folder and type `/g2`. You get:
 
 ```
 .raw/                 your sources — immutable, the agent never writes here
