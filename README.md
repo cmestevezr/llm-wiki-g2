@@ -2,6 +2,11 @@
 
 > **G** for Graph · **G** for Git
 
+<p align="center">
+  <img src="docs/assets/hero.webp" width="100%"
+       alt="A sheet of markdown text seen at an angle. Its frontmatter lines peel off the top edge and stretch into luminous directed edges, resolving into a sparse graph of coloured nodes — green sources, blue concepts, violet entities, amber syntheses, and one unresolved red gap set apart. A thin chain descends from the page into the dark, toward an anchor out of frame." />
+</p>
+
 Turn an [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) into a
 derived knowledge graph. Edges are **declared while writing**, not extracted while reading.
 Retrieval cost stops growing with the vault. Nothing you already wrote is touched.
