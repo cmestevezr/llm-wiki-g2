@@ -28,7 +28,7 @@ git remote add origin git@github.com:cmestevezr/llm-wiki-g2.git
 
 ```bash
 pip3 install pyyaml                   # the only dependency
-bash tests/test-migration.sh          # should print 12 passed, 0 failed
+bash tests/run-all.sh                 # should print 31 passed, 0 failed
 
 grep -rnE '(github\.com/|marketplace add )[A-Za-z0-9_-]+/llm-wiki-g2' \
      README.md docs/ .claude-plugin/ templates/ | grep -v cmestevezr

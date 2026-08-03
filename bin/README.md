@@ -61,6 +61,17 @@ bin/snapshot.sh --clean
 
 Uses a `git worktree`, so it never touches the current vault.
 
+## Tests
+
+```bash
+bash tests/run-all.sh
+```
+
+`test-migration.sh` — the five guarantees, 12 checks.
+`test-queries.sh` — every `wq.py` command, 19 checks, asserting on output.
+
+Both refuse to run without PyYAML rather than reporting vacuous passes.
+
 ## Note on external drives
 
 On exFAT/NTFS volumes git can leave a stale `.git/index.lock` when the filesystem denies

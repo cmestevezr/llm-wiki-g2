@@ -168,8 +168,12 @@ Obsidian is optional but assumed. Model-agnostic — nothing here depends on a p
 provider.
 
 ```bash
-bash tests/test-migration.sh    # 12 passed, 0 failed
+bash tests/run-all.sh           # 31 passed, 0 failed
 ```
+
+Tested against Python 3.9 and 3.11. Two suites: `test-migration.sh` covers the five
+guarantees, `test-queries.sh` covers every `wq.py` command with assertions on output
+rather than exit codes.
 
 ## Credit
 
