@@ -153,12 +153,16 @@ Installed with the plugin, for Claude Code and Cowork:
 
 ---
 
-## Design notes
+## Reading
 
-[`docs/design.md`](docs/design.md) has the full argument: where the idea comes from, what it
-costs, what it does **not** solve, and three falsifiable predictions — including the one that
-would sink it. If L0→L1→L2 answers worse than reading bodies, prose matters more than this
-design assumes.
+[`docs/rationale.md`](docs/rationale.md) — **why this exists.** What the three reference
+projects solve, the five gaps they leave open, how declaring instead of extracting closes
+four of them, what you gain in concrete numbers, what it costs you, and who should not use it.
+
+[`docs/design.md`](docs/design.md) — the architecture argument: mechanisms, tradeoffs, what
+it does **not** solve, and three falsifiable predictions including the one that would sink
+it. If L0→L1→L2 answers worse than reading bodies, prose matters more than this design
+assumes.
 
 ## Requirements
 
