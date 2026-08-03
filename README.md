@@ -3,8 +3,8 @@
 > **G** for Graph · **G** for Git
 
 <p align="center">
-  <img src="docs/assets/hero.webp" width="100%"
-       alt="A sheet of markdown text seen at an angle. Its frontmatter lines peel off the top edge and stretch into luminous directed edges, resolving into a sparse graph of coloured nodes — green sources, blue concepts, violet entities, amber syntheses, and one unresolved red gap set apart. A thin chain descends from the page into the dark, toward an anchor out of frame." />
+  <img src="docs/assets/overview.webp" width="100%"
+       alt="Infographic. Left: traditional extraction, a tangled grey graph, labelled with the entity loss reported by Anthropic's own evaluation. Right: declaration, an orderly orange graph whose connections are recorded in frontmatter as each page is written. Below: three user-facing benefits — lower retrieval cost, provenance anchoring against drift, and a scripted health check — and a table comparing a plain LLM Wiki against G² on finding connections, finding contradictions, and how cost behaves as the vault grows." />
 </p>
 
 Turn an [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) into a

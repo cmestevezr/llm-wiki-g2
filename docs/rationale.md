@@ -1,5 +1,10 @@
 # Why this exists
 
+<p align="center">
+  <img src="assets/graph-emergence.webp" width="100%"
+       alt="A sheet of markdown seen at an angle. Its frontmatter lines peel off the top edge and stretch into luminous directed edges, resolving into a sparse graph of coloured nodes. A thin chain descends from the page toward an anchor out of frame." />
+</p>
+
 This project did not start as a project. It started as a comparison between three pieces of
 work that were circulating in mid-2026, all of them good, none of them quite answering the
 question the others raised. What follows is the argument that came out of putting them side
