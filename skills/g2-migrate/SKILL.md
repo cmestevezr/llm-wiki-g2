@@ -22,10 +22,22 @@ migration" means nothing without specifics:
 4. **Idempotent** — running twice changes nothing the second time
 5. **Git guarded** — refuses to apply on a dirty tree
 
+## Before you start: where the scripts are
+
+`migrate.py` ships with this plugin, not with the user's vault. Resolve it relative to the
+plugin directory (`${CLAUDE_PLUGIN_ROOT}/bin/migrate.py`) or, if the user cloned the repo,
+relative to that clone. **Do not assume `bin/` exists inside their vault** — at this point
+it does not, and telling them to run a script they do not have is the fastest way to lose
+their trust in a tool whose entire pitch is that it will not break anything.
+
+After the migration succeeds, copy `build-edges.py`, `wq.py` and `snapshot.sh` into the
+vault's own `bin/`, because those are the ones they will run daily. `migrate.py` does not
+need to be copied — it has done its job.
+
 ## Phase 1 — scaffolding (script, zero risk)
 
 ```bash
-python3 bin/migrate.py --vault "$VAULT"                    # dry run
+python3 <plugin>/bin/migrate.py --vault "$VAULT"           # dry run
 ```
 
 Then **show the user the report** at `.g2/migration-report.md`. Walk them through:
@@ -38,10 +50,10 @@ Then **show the user the report** at `.g2/migration-report.md`. Walk them throug
 Get explicit consent. Then:
 
 ```bash
-python3 bin/migrate.py --vault "$VAULT" --apply --backup
-python3 bin/migrate.py --vault "$VAULT" --verify
-python3 bin/build-edges.py --vault "$VAULT"
-python3 bin/wq.py --vault "$VAULT" lint
+python3 <plugin>/bin/migrate.py --vault "$VAULT" --apply --backup
+python3 <plugin>/bin/migrate.py --vault "$VAULT" --verify
+python3 <plugin>/bin/build-edges.py --vault "$VAULT"
+python3 <plugin>/bin/wq.py --vault "$VAULT" lint
 ```
 
 If they get cold feet at any point: `git checkout -- .` puts everything back.

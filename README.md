@@ -73,22 +73,32 @@ claude plugin install llm-wiki-g2@llm-wiki-g2-marketplace
 ```
 
 Open Claude in your (empty) vault folder and type `/g2`. It scaffolds the structure, installs
-the scripts, sets up git and the Obsidian colours, and asks you one question: what is this
-vault for. → [`docs/from-scratch.md`](docs/from-scratch.md)
+the scripts, sets up git, and asks you one question: what is this vault for. If you use
+Obsidian it will offer the colour scheme too; if you don't, it skips that step and nothing
+else changes. → [`docs/from-scratch.md`](docs/from-scratch.md)
 
 ### You already have an LLM Wiki
 
 This is the case the project is built around. Your notes may be months of work; the
 migration treats them as immutable.
 
+The migration runs from a clone of this repo and points at your vault — it does not need to
+be installed into it:
+
 ```bash
+git clone https://github.com/cmestevezr/llm-wiki-g2
+cd llm-wiki-g2
+
 python3 bin/migrate.py --vault ~/my-wiki            # dry run, writes a report
-# read .g2/migration-report.md, then:
+# read ~/my-wiki/.g2/migration-report.md, then:
 python3 bin/migrate.py --vault ~/my-wiki --apply --backup
 python3 bin/migrate.py --vault ~/my-wiki --verify
+
+cp bin/{build-edges.py,wq.py,snapshot.sh} ~/my-wiki/bin/   # for day-to-day use afterwards
 ```
 
-Or just say **"upgrade my wiki"** to Claude and it follows the same path with you.
+Or install the plugin and just say **"upgrade my wiki"** to Claude — it follows the same
+path with you and knows where its own scripts live.
 → [`docs/migrating.md`](docs/migrating.md)
 
 **Five guarantees, each one tested** ([`tests/test-migration.sh`](tests/test-migration.sh)):

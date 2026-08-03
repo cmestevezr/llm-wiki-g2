@@ -22,6 +22,27 @@ Only these keys, and only where they are absent:
 Nothing else is touched. No key is modified, no key is removed, no file is moved or renamed,
 and not one line of prose changes.
 
+## Where the scripts live
+
+`migrate.py` runs **from a clone of this repo**, pointing at your vault. It is not installed
+into your vault and does not need to be:
+
+```bash
+git clone https://github.com/cmestevezr/llm-wiki-g2
+cd llm-wiki-g2
+```
+
+Every command below is run from that directory. If you installed the plugin instead, tell
+Claude "upgrade my wiki" and it resolves the paths itself.
+
+After the migration you will want `build-edges.py`, `wq.py` and `snapshot.sh` **inside** your
+vault, since you will run them daily:
+
+```bash
+mkdir -p ~/my-wiki/bin
+cp bin/build-edges.py bin/wq.py bin/snapshot.sh ~/my-wiki/bin/
+```
+
 ## Phase 1 — scaffolding (a script, zero risk)
 
 ```bash
