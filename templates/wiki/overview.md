@@ -20,7 +20,7 @@ than learning.)_
 
 ## How this vault is built
 
-Follows [LLM Wiki G²](https://github.com/karelman/llm-wiki-g2): edges are declared in
+Follows [LLM Wiki G²](https://github.com/cmestevezr/llm-wiki-g2): edges are declared in
 frontmatter at write time, the graph is derived from them by script, and every claim
 should chain back to an immutable source in `.raw/`.
 

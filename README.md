@@ -63,7 +63,7 @@ That ceiling is a **token** ceiling, not a disk one — and it is the one this r
 ### You have nothing yet
 
 ```bash
-claude plugin marketplace add karelman/llm-wiki-g2
+claude plugin marketplace add cmestevezr/llm-wiki-g2
 claude plugin install llm-wiki-g2@llm-wiki-g2-marketplace
 ```
 
